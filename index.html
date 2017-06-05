@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SLOT machine</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css\main.css">
+</head>
+<body>
+
+<div class="wrapp">
+	<header class="header">
+		<nav class="navbar">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<h1><a id="logo" class="navbar-brand" href="#"><strong>7</strong>fruits</a></h1>
+				</div>
+				<form class="navbar-form navbar-right user_cash">
+					<div class="form-group">
+						<label>Jackpot:</label>
+						<p id="jackpot" class="jackpot_number"></p>
+					</div>
+	        <div class="form-group">
+						<label>Your cash:</label>
+			      <input id="cash-input" type="number" name="cash" class="form-control" value="10000" disabled> din.
+	        </div>
+				</form>
+			</div>
+		</nav>
+	</header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="slot_holder">
+						<div class="line_info_pic">
+							<span class="line_info_pic1"></span>
+							<span class="line_info_pic2"></span>
+							<span class="line_info_pic3"></span>
+							<span class="line_info_pic4"></span>
+							<span class="line_info_pic5"></span>
+							<span class="line_info_pic6"></span>
+							<span class="line_info_pic7"></span>
+							<span class="line_info_pic8"></span>
+							<span class="line_info_pic9"></span>
+						</div>
+
+						<div class="lines_info lines_info_left">
+							<span class="line_info1">1</span>
+							<span class="line_info4">4</span>
+							<span class="line_info8">8</span>
+							<span class="line_info6">6</span>
+							<span class="line_info2">2</span>
+							<span class="line_info9">9</span>
+							<span class="line_info7">7</span>
+							<span class="line_info5">5</span>
+							<span class="line_info3">3</span>
+					</div>
+          <div class="slot_frame">
+            <div class="slot_shadow"></div>
+							<div id="line-wrapp1" class="line_wrapp"></div>
+							<div id="line-wrapp2" class="line_wrapp"></div>
+							<div id="line-wrapp3" class="line_wrapp"></div>
+							<div id="line-wrapp4" class="line_wrapp"></div>
+							<div id="line-wrapp5" class="line_wrapp"></div>
+          </div>
+						<div class="lines_info lines_info_right">
+							<span class="line_info1">1</span>
+							<span class="line_info4">4</span>
+							<span class="line_info8">8</span>
+							<span class="line_info6">6</span>
+							<span class="line_info2">2</span>
+							<span class="line_info7">7</span>
+							<span class="line_info9">9</span>
+							<span class="line_info5">5</span>
+							<span class="line_info3">3</span>
+						</div>
+        </div>
+
+        <div class="all_commands text-center">
+
+					<div class="col-xs-5">
+						<div class="form-inline left_commands">
+							<div class="form-group">
+								<label for="win-turn">WIN:</label>
+								<input id="win-turn" class="form-control" type="number" name="win-turn" value="0" disabled>
+							</div>
+							<div class="form-group">
+								<label>BET:</label>
+								<div class="input-group">
+						      <span class="input-group-btn">
+						        <button id="minus-btn" class="btn btn-default bet_btn" type="button"><strong>&minus;</strong></button>
+						      </span>
+						      <input id="bet-input" type="number" name="bet" class="form-control" value="50" disabled>
+						      <span class="input-group-btn">
+						        <button id="plus-btn" class="btn btn-default bet_btn" type="button"><strong>&plus;</strong></button>
+						      </span>
+					    	</div><!-- /input-group -->
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3 col-sm-2">
+          	<button id="spin-btn" class="spin_btn">Spin</button>
+					</div>
+					<div class="col-xs-4 col-sm-3">
+          	<div class="right_commands">
+							<button id="autoplay-btn" class="autoplay_btn btn btn-default">Autoplay</button>
+							<button id="maxbet-btn" class="naxbet_btn btn btn-primary">Max bet</button>
+          	</div>
+					</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/fruits.js"></script>
+<!-- <script src="js/slot.js"></script> -->
+<script src="js/calc.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
