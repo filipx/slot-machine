@@ -22,6 +22,7 @@ var jackpot_WIN = 10000;
 var duration;
 var hitsExist, autoplayActive = false;
 
+// pamcenje jackpot counter-a u lockala storage-u
 if (localStorage.getItem("jackpotProgress")) {
 	jackpotCounter = localStorage.getItem("jackpotProgress");
 }
@@ -32,6 +33,7 @@ for (var i = 0; i < jackpotNumber.length; i++) {
 }
 jackpotCounter++;
 
+// dodavanje nula ispred broja
 function padd(n, digits, z) {
   z = z || '0';
   n = n + '';
@@ -39,7 +41,6 @@ function padd(n, digits, z) {
 }
 
 // Pregled mogucih linija
-
 linesNum.on('mouseenter', function(e) {
 
 	let line_num_index = $(this).attr('data-line-num');
@@ -321,12 +322,18 @@ function checkForHits(hits) {
 	let allScoreLines = [], scoredLines = [], scoredLinesIndex = [];
 	let imgHits = hits.find('img');
 	// console.log(imgHits);
+
+	// Array sa svim linijama
 	allScoreLines = [
 										[imgHits[0], imgHits[3], imgHits[6], imgHits[9], imgHits[12]],
 										[imgHits[1], imgHits[4], imgHits[7], imgHits[10], imgHits[13]],
 										[imgHits[2], imgHits[5], imgHits[8], imgHits[11], imgHits[14]],
 										[imgHits[2], imgHits[4], imgHits[6], imgHits[10], imgHits[14]],
-										[imgHits[0], imgHits[4], imgHits[8], imgHits[10], imgHits[12]]
+										[imgHits[0], imgHits[4], imgHits[8], imgHits[10], imgHits[12]],
+										[imgHits[1], imgHits[5], imgHits[8], imgHits[11], imgHits[13]],
+										[imgHits[1], imgHits[3], imgHits[6], imgHits[9], imgHits[13]],
+										[imgHits[0], imgHits[3], imgHits[7], imgHits[9], imgHits[12]],
+										[imgHits[2], imgHits[5], imgHits[7], imgHits[11], imgHits[14]]
 									];
 
 	$.each(allScoreLines, function(index,el) {
