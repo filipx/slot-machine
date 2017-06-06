@@ -13,6 +13,8 @@ var cashInput = $('#cash-input');
 var cash = parseInt(cashInput.val());
 var winInput = $('#win-turn');
 var win = parseInt(winInput.val());
+var linesNum = $('.lines_info span');
+var linesPicHolder = $('.line_info_pic');
 var jackpotInput = $('#jackpot');
 var jackpotCounter = 1;
 var jackpotProgress;
@@ -35,6 +37,20 @@ function padd(n, digits, z) {
   n = n + '';
   return n.length >= digits ? n : new Array(digits - n.length + 1).join(z) + n;
 }
+
+// Pregled mogucih linija
+
+linesNum.on('mouseenter', function(e) {
+
+	let line_num_index = $(this).attr('data-line-num');
+	console.log(line_num_index);
+	$('<span></span>', {
+		class : "line_info_pic" + line_num_index
+	}).appendTo(linesPicHolder);
+});
+linesNum.on('mouseleave', function(e) {
+	linesPicHolder.html("");
+});
 
 
 createLines();
